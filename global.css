@@ -1,0 +1,169 @@
+@import url("https://rsms.me/inter/inter.css");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+button,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, main, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-size: 100%;
+  font: inherit;
+  color: #FFFFFF;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1;
+  background-color: #1A1A1A; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+input {
+  font-family: inherit;
+  font-weight: 500;
+  color: #FFFFFF;
+  border: none;
+  outline: none; }
+
+::selection {
+  background-color: #FFFFFF;
+  color: #1A1A1A; }
+
+html {
+  font-family: "Inter", sans-serif; }
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif; } }
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  user-select: none;
+  cursor: pointer; }
+  .button:focus {
+    outline: 0; }
+  .button--seek {
+    background-color: transparent; }
+  .button--toggle {
+    width: 4rem;
+    height: 4rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    background-color: #FFFFFF;
+    border-radius: 2rem;
+    transform: scale(1);
+    transition: transform 0.1s ease-in-out, background-color 0.1s ease-in-out; }
+    .button--toggle:hover {
+      transform: scale(1.05); }
+    .button--toggle:active {
+      background-color: rgba(255, 255, 255, 0.6);
+      transform: scale(1); }
+
+.player {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100vh;
+  padding: 2rem 2rem 2rem; }
+  .player__background {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150%;
+    height: 150%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.25;
+    filter: blur(4rem);
+    z-index: -1; }
+  .player__album {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .player__cover {
+    max-width: 420px;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25);
+    user-select: none;
+    pointer-events: none; }
+  .player__song {
+    margin-bottom: 0.25rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.75rem;
+    letter-spacing: -0.019em; }
+  .player__artist {
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    letter-spacing: -0.011em;
+    color: rgba(255, 255, 255, 0.6); }
+  .player__controls {
+    max-width: 420px;
+    width: 100%;
+    align-self: center; }
+  .player__info {
+    margin-bottom: 1.5rem; }
+  .player__track {
+    margin-bottom: 1.5rem; }
+  .player__progress {
+    width: 100%; }
+    .player__progress[value] {
+      -webkit-appearance: none;
+      appearance: none;
+      height: 0.25rem; }
+    .player__progress[value]::-webkit-progress-bar {
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 0.125rem; }
+    .player__progress::-webkit-progress-value {
+      background-color: #FFFFFF;
+      border-radius: 0.125rem; }
+  .player__time {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem; }
+    .player__time div {
+      font-size: 0.75rem;
+      line-height: 1rem;
+      color: rgba(255, 255, 255, 0.6);
+      font-variant-numeric: tabular-nums; }
+  .player__buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center; }

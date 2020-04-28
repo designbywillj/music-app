@@ -1,0 +1,109 @@
+.player {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100vh;
+  padding: 2rem 2rem 2rem;
+
+  &__background {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150%;
+    height: 150%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.25;
+    filter: blur(4rem);
+    z-index: -1;
+  }
+
+  &__album {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__cover {
+    max-width: 420px;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25);
+    user-select: none;
+    pointer-events: none;
+  }
+
+  &__song {
+    margin-bottom: 0.25rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.75rem;
+    letter-spacing: -0.019em;
+  }
+
+  &__artist {
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    letter-spacing: -0.011em;
+    color: $light-gray;
+  }
+
+  &__controls {
+    max-width: 420px;
+    width: 100%;
+    align-self: center;
+  }
+
+  
+  &__info {
+    margin-bottom: 1.5rem;
+  }
+
+  &__track {
+    margin-bottom: 1.5rem;
+  }
+
+  &__progress {
+    width: 100%;
+
+    &[value] {
+      -webkit-appearance: none;
+      appearance: none;
+      height: 0.25rem;
+    }
+
+    &[value]::-webkit-progress-bar {
+      background-color: $dark-gray;
+      border-radius: 0.125rem;
+    }
+
+    &::-webkit-progress-value {
+      background-color: $white;
+      border-radius: 0.125rem;
+    }
+  }
+
+  &__time {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    
+    div {
+      font-size: 0.75rem;
+      line-height: 1rem;
+      color: $light-gray;
+      font-variant-numeric: tabular-nums;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
